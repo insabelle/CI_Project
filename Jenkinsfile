@@ -14,19 +14,19 @@ pipeline {
         stage('Vérification Python') {
             steps {
                 bat 'python --version'
-                bat 'pip --version'
+                bat 'python -m pip --version'
             }
         }
 
         stage('Installation des dépendances') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat 'python -m pip install -r requirements.txt'
             }
         }
 
         stage('Tests unitaires') {
             steps {
-                bat 'pytest'
+                bat 'python -m pytest'
             }
         }
     }
@@ -38,11 +38,11 @@ pipeline {
         }
 
         success {
-            echo 'Tous les tests ont réussi'
+            echo 'BUILD SUCCESS'
         }
 
         failure {
-            echo 'Des erreurs ont été détectées'
+            echo 'BUILD FAILED'
         }
     }
 }
