@@ -11,3 +11,7 @@ def test_multiplication():
 
 def test_division():
     assert division(8, 2) == 4
+
+def test_puissance():
+    assert puissance(2, 3) == 8
+    assert puissance(5, 0) == 1
