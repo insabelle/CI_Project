@@ -8,7 +8,10 @@ def multiplication(a, b):
     return a * b
 
 def division(a, b):
-    return a / b
+if b == 0:
+raise ValueError("Division par zéro impossible")
+return a / b
+
 
 def puissance(a, b):
     return a ** b
